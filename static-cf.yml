@@ -1,0 +1,16 @@
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: bucket-oh-bucket-josh
+  Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0866a3c8686eaeeba
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: 0
+          SubnetId: subnet-0d4d71b83ec72c2cd  # Replace with your subnet ID
+          GroupSet:
+            - sg-0bc1ada76fe74fe0a
